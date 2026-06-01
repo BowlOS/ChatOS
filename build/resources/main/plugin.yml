@@ -1,0 +1,267 @@
+name: ChatOS
+version: '1.0.0'
+main: dev.bowlos.chatos.ChatOS
+description: 'ChatOS - Professional Staff Chat Plugin by BowlOS'
+authors: [ BowlOS ]
+website: https://github.com/BowlOS
+api-version: '1.21'
+folia-supported: false
+
+softdepend:
+  - LuckPerms
+
+commands:
+  staffchat:
+    description: Toggle or send a message in Staff Chat
+    usage: /staffchat [message]
+    aliases: [ sc, schat ]
+    permission: chatos.staffchat
+
+  adminchat:
+    description: Toggle or send a message in Admin Chat
+    usage: /adminchat [message]
+    aliases: [ ac, achat ]
+    permission: chatos.adminchat
+
+  devmode:
+    description: Toggle or send a message in Dev Chat
+    usage: /devmode [message]
+    aliases: [ dev, dc ]
+    permission: chatos.devmode
+
+  helpop:
+    description: Send an urgent message to all online staff
+    usage: /helpop <message>
+    aliases: [ helpme, requesthelp ]
+    permission: chatos.helpop
+
+  stafflist:
+    description: View all online staff members and their active channels
+    usage: /stafflist [channel]
+    aliases: [ sl, onlinestaff, slist ]
+    permission: chatos.stafflist
+
+  staffchatspy:
+    description: Toggle spy mode to see all staff channel messages
+    usage: /staffchatspy [on|off]
+    aliases: [ scspy, spy, chatspy ]
+    permission: chatos.spy
+
+  staffmode:
+    description: Toggle Staff Mode (vanish + god mode)
+    usage: /staffmode [player]
+    aliases: [ sm, smode ]
+    permission: chatos.staffmode
+
+  staffhistory:
+    description: View recent staff chat message history
+    usage: /staffhistory [channel] [lines]
+    aliases: [ sh, schistory, history ]
+    permission: chatos.history
+
+  staffbroadcast:
+    description: Broadcast a highlighted message to all staff
+    usage: /staffbroadcast <message>
+    aliases: [ sb, sbroadcast, staffbc ]
+    permission: chatos.broadcast
+
+  staffmute:
+    description: Mute a player from using staff chat channels
+    usage: /staffmute <player> [reason]
+    aliases: [ smute ]
+    permission: chatos.staffmute
+
+  staffunmute:
+    description: Unmute a player from staff chat channels
+    usage: /staffunmute <player>
+    aliases: [ sunmute ]
+    permission: chatos.staffmute
+
+  channel:
+    description: Manage and customise staff chat channels at runtime
+    usage: /channel <list|info|create|delete|mute|edit> [args]
+    aliases: [ ch, chan ]
+    permission: chatos.channel
+
+  chatos:
+    description: Main ChatOS administration command
+    usage: /chatos <reload|info|channels|debug|version|help>
+    aliases: [ co ]
+    permission: chatos.admin
+
+permissions:
+
+  chatos.staffchat:
+    description: Send and receive Staff Chat messages
+    default: op
+
+  chatos.adminchat:
+    description: Send and receive Admin Chat messages
+    default: op
+
+  chatos.devmode:
+    description: Send and receive Dev Chat messages
+    default: op
+
+  chatos.helpop:
+    description: Use /helpop to contact online staff
+    default: true
+
+  chatos.helpop.receive:
+    description: Receive /helpop messages from players
+    default: op
+
+  chatos.helpop.cooldown.bypass:
+    description: Bypass the /helpop cooldown
+    default: op
+
+  chatos.stafflist:
+    description: View the online staff list
+    default: op
+
+  chatos.stafflist.others:
+    description: Filter /stafflist by channel
+    default: op
+
+  chatos.spy:
+    description: Toggle staff chat spy mode
+    default: op
+
+  chatos.spy.stealth:
+    description: Spy without appearing in /stafflist
+    default: false
+
+  chatos.staffmode:
+    description: Use /staffmode
+    default: op
+
+  chatos.staffmode.others:
+    description: Toggle staff mode for other players
+    default: op
+
+  chatos.staffmode.vanish:
+    description: Apply vanish when entering staff mode
+    default: op
+
+  chatos.staffmode.god:
+    description: Apply god mode when entering staff mode
+    default: op
+
+  chatos.history:
+    description: View recent staff chat history
+    default: op
+
+  chatos.history.extended:
+    description: View extended history (up to 100 lines)
+    default: op
+
+  chatos.broadcast:
+    description: Send a staff broadcast message
+    default: op
+
+  chatos.broadcast.receive:
+    description: Receive staff broadcast messages
+    default: op
+
+  chatos.staffmute:
+    description: Mute/unmute players from staff channels
+    default: op
+
+  chatos.staffmute.bypass:
+    description: Bypass staff-channel mutes
+    default: op
+
+  chatos.channel:
+    description: View channel list and info
+    default: op
+
+  chatos.channel.create:
+    description: Create new staff chat channels
+    default: op
+
+  chatos.channel.delete:
+    description: Delete existing staff chat channels
+    default: op
+
+  chatos.channel.edit:
+    description: Edit existing channel properties live
+    default: op
+
+  chatos.channel.mute:
+    description: Mute/unmute individual channels
+    default: op
+
+  chatos.notify.join:
+    description: Receive staff join/leave notifications
+    default: op
+
+  chatos.notify.helpop:
+    description: Receive an alert sound on HelpOp
+    default: op
+
+  chatos.bypass.mute:
+    description: Bypass channel mutes when sending messages
+    default: op
+
+  chatos.bypass.filter:
+    description: Bypass the staff chat word filter
+    default: op
+
+  chatos.color:
+    description: Use color codes in staff chat messages
+    default: op
+
+  chatos.color.hex:
+    description: Use hex color codes in staff chat messages
+    default: op
+
+  chatos.format:
+    description: Use bold/italic/underline in staff chat
+    default: op
+
+  chatos.admin:
+    description: Full ChatOS administration access
+    default: op
+
+  chatos.debug:
+    description: Access debug output and diagnostics
+    default: false
+
+  chatos.*:
+    description: Grant all ChatOS permissions
+    default: op
+    children:
+      chatos.staffchat: true
+      chatos.adminchat: true
+      chatos.devmode: true
+      chatos.helpop: true
+      chatos.helpop.receive: true
+      chatos.helpop.cooldown.bypass: true
+      chatos.stafflist: true
+      chatos.stafflist.others: true
+      chatos.spy: true
+      chatos.spy.stealth: true
+      chatos.staffmode: true
+      chatos.staffmode.others: true
+      chatos.staffmode.vanish: true
+      chatos.staffmode.god: true
+      chatos.history: true
+      chatos.history.extended: true
+      chatos.broadcast: true
+      chatos.broadcast.receive: true
+      chatos.staffmute: true
+      chatos.staffmute.bypass: true
+      chatos.channel: true
+      chatos.channel.create: true
+      chatos.channel.delete: true
+      chatos.channel.edit: true
+      chatos.channel.mute: true
+      chatos.notify.join: true
+      chatos.notify.helpop: true
+      chatos.bypass.mute: true
+      chatos.bypass.filter: true
+      chatos.color: true
+      chatos.color.hex: true
+      chatos.format: true
+      chatos.admin: true
+      chatos.debug: true

@@ -1,0 +1,230 @@
+
+
+
+
+
+
+settings:
+
+
+  plugin-prefix: "&#00b4ff◈ &#ffffff ChatOS &#8b8b8b│"
+
+
+  log-to-console: true
+
+
+  log-to-file: true
+
+
+  staff-join-notify: true
+
+
+  word-filter:
+    enabled: false
+    words:
+      - "badword1"
+      - "badword2"
+
+
+  message-sound:
+    enabled: true
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    volume: 0.8
+    pitch: 1.4
+
+
+  helpop-sound:
+    enabled: true
+    sound: "BLOCK_NOTE_BLOCK_PLING"
+    volume: 1.0
+    pitch: 2.0
+
+
+  broadcast-sound:
+    enabled: true
+    sound: "ENTITY_PLAYER_LEVELUP"
+    volume: 0.6
+    pitch: 1.0
+
+
+  auto-toggle-off-seconds: 0
+
+
+  max-history-lines: 50
+
+
+  proxy:
+    enabled: false
+
+    mode: "PLUGIN_MESSAGING"
+
+
+  staff-mode:
+
+    vanish: true
+
+    god-mode: true
+
+    inventory-save: true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+channels:
+  staff:
+    name: "Staff Chat"
+    permission: "chatos.staffchat"
+    format: "&#00b4ff⚡ &#8b8b8b{rank}&#ffffff{displayname} &#8b8b8b» &#ffffff{message}"
+    prefix: "&#00b4ff[SC]"
+    spy-format: "&#8b8b8b[SPY &#00b4ff{server}&#8b8b8b] {rank}&#ffffff{displayname} &#8b8b8b» &#ffffff{message}"
+    color: "&#00b4ff"
+    proxy-broadcast: true
+    logged: true
+    muted: false
+    sound-override: ""
+
+    aliases:
+      - "sc"
+      - "staff"
+
+  admin:
+    name: "Admin Chat"
+    permission: "chatos.adminchat"
+    format: "&#ff4444⚑ &#8b8b8b{rank}&#ffffff{displayname} &#8b8b8b» &#ffffff{message}"
+    prefix: "&#ff4444[AC]"
+    spy-format: "&#8b8b8b[SPY &#ff4444{server}&#8b8b8b] {rank}&#ffffff{displayname} &#8b8b8b» &#ffffff{message}"
+    color: "&#ff4444"
+    proxy-broadcast: true
+    logged: true
+    muted: false
+    sound-override: ""
+    aliases:
+      - "ac"
+      - "admin"
+
+  dev:
+    name: "Dev Chat"
+    permission: "chatos.devmode"
+    format: "&#44ff88⌨ &#8b8b8b{rank}&#ffffff{displayname} &#8b8b8b» &#ffffff{message}"
+    prefix: "&#44ff88[DC]"
+    spy-format: "&#8b8b8b[SPY &#44ff88{server}&#8b8b8b] {rank}&#ffffff{displayname} &#8b8b8b» &#ffffff{message}"
+    color: "&#44ff88"
+    proxy-broadcast: false
+    logged: true
+    muted: false
+    sound-override: ""
+    aliases:
+      - "dc"
+      - "dev"
+
+
+
+
+
+
+
+messages:
+
+
+  no-permission:      "&#ff4444✗ &#ffffff You don't have permission to do that."
+  player-only:        "&#ff4444✗ &#ffffff This command can only be run by a player."
+  plugin-reloaded:    "&#44ff88✔ &#ffffff Configuration reloaded successfully."
+  unknown-command:    "&#ff4444✗ &#ffffff Unknown sub-command. Try &#00b4ff/chatos help&#ffffff."
+  unknown-channel:    "&#ff4444✗ &#ffffff Unknown channel: &#ffffff{channel}&#ffffff."
+  invalid-player:     "&#ff4444✗ &#ffffff Player &#ffffff{player} &#ff4444is not online."
+  provide-message:    "&#ff4444✗ &#ffffff You must provide a message."
+
+
+  toggle-on:  "{color}▶ &#ffffff Now speaking in {color}{name}&#8b8b8b. Type normally to chat."
+  toggle-off: "&#8b8b8b◀ &#ffffff Left {color}{name}&#8b8b8b. Back to normal chat."
+
+
+  quick-send: "&#8b8b8b◈ &#ffffff Sent to {color}{name}&#8b8b8b."
+
+
+  spy-on:  "&#00b4ff◉ &#ffffff Spy mode &#44ff88enabled&#ffffff. You will see all channel messages."
+  spy-off: "&#00b4ff◉ &#ffffff Spy mode &#ff4444disabled&#ffffff."
+
+
+  helpop-format:    "&#ffaa00⚠ &#ffffff{displayname} &#8b8b8bfrom &#ffffff{server} &#8b8b8b» &#ffaa00{message}"
+  helpop-sent:      "&#44ff88✔ &#ffffff Your message was sent to online staff."
+  helpop-no-message: "&#ff4444✗ &#ffffff Usage: &#ffffff/helpop <message>&#ff4444."
+  helpop-cooldown:  "&#ff4444✗ &#ffffff Please wait &#ffffff{seconds}s &#ff4444before sending another HelpOp."
+  helpop-cooldown-seconds: 10
+
+
+  stafflist-header:   "&#00b4ff ────── &#ffffff Online Staff &#00b4ff──────"
+  stafflist-entry:    "  {color}◈ &#ffffff{player} &#8b8b8b· {color}{channel} &#8b8b8b· &#ffffff{server}"
+  stafflist-spy-tag:  " &#8b8b8b[SPY]"
+  stafflist-mode-tag: " &#ffaa00[STAFFMODE]"
+  stafflist-no-staff: "  &#8b8b8bNo staff members are currently online."
+  stafflist-footer:   "&#00b4ff ────────────────────────"
+  stafflist-count:    "&#8b8b8b  {count} staff online across {servers} server(s)."
+
+
+  staff-join: "&#44ff88◈ &#ffffff{displayname} &#8b8b8bjoined &#ffffff{server}&#8b8b8b."
+  staff-quit: "&#ff4444◈ &#ffffff{displayname} &#8b8b8bleft &#ffffff{server}&#8b8b8b."
+
+
+  channel-muted:    "&#ff4444✗ &#ffffff{name} &#ff4444is currently muted."
+  channel-mute-on:  "&#ffaa00◈ &#ffffff{name} &#ffaa00has been muted&#ffffff."
+  channel-mute-off: "&#44ff88◈ &#ffffff{name} &#44ff88has been unmuted&#ffffff."
+
+
+  staff-muted-notify:     "&#ff4444✗ &#ffffff You have been muted from staff channels by &#ffffff{staff}&#ff4444."
+  staff-unmuted-notify:   "&#44ff88✔ &#ffffff You have been unmuted from staff channels by &#ffffff{staff}&#44ff88."
+  staff-muted-reason:     "&#ff4444✗ &#ffffff You are muted from staff channels. Reason: &#ffffff{reason}&#ff4444."
+  staff-muted-other:      "&#44ff88✔ &#ffffff Muted &#ffffff{player} &#44ff88from staff channels."
+  staff-unmuted-other:    "&#44ff88✔ &#ffffff Unmuted &#ffffff{player} &#44ff88from staff channels."
+  staff-not-muted:        "&#ff4444✗ &#ffffff{player} &#ff4444is not muted."
+  staff-already-muted:    "&#ff4444✗ &#ffffff{player} &#ff4444is already muted."
+
+
+  staffmode-on:       "&#00b4ff⚡ &#ffffff Staff Mode &#44ff88enabled&#ffffff."
+  staffmode-off:      "&#00b4ff⚡ &#ffffff Staff Mode &#ff4444disabled&#ffffff."
+  staffmode-on-other:  "&#00b4ff⚡ &#ffffff Enabled Staff Mode for &#ffffff{player}&#00b4ff."
+  staffmode-off-other: "&#00b4ff⚡ &#ffffff Disabled Staff Mode for &#ffffff{player}&#00b4ff."
+
+
+  broadcast-format: "&#ffaa00 ════ &#ffffff STAFF BROADCAST &#ffaa00════\n &#ffaa00{sender}&#ffffff: {message}\n &#ffaa00 ═════════════════════"
+
+
+  history-header:  "&#00b4ff ────── &#ffffff{channel} History &#00b4ff──────"
+  history-entry:   "  &#8b8b8b{time} &#ffffff{player} &#8b8b8b» &#ffffff{message}"
+  history-empty:   "  &#8b8b8bNo messages recorded yet."
+  history-footer:  "&#00b4ff ──── &#8b8b8bShowing {count} of {total} &#00b4ff────"
+
+
+  channel-created:  "&#44ff88✔ &#ffffff Channel &#44ff88{channel} &#ffffff created."
+  channel-deleted:  "&#ff4444✔ &#ffffff Channel &#ff4444{channel} &#ffffff deleted."
+  channel-edited:   "&#44ff88✔ &#ffffff Channel &#ffffff{channel} &#44ff88updated: &#ffffff{property} &#8b8b8b→ &#ffffff{value}"
+  channel-exists:   "&#ff4444✗ &#ffffff A channel with id &#ffffff{channel} &#ff4444already exists."
+  channel-not-found: "&#ff4444✗ &#ffffff No channel found with id &#ffffff{channel}&#ff4444."
+  channel-no-delete-default: "&#ff4444✗ &#ffffff Cannot delete a default channel."
+
+
+  info-header:   "&#00b4ff ══════ &#ffffff ChatOS &#8b8b8bv{version} &#00b4ff══════"
+  info-author:   "  &#8b8b8bAuthor    &#ffffff BowlOS"
+  info-server:   "  &#8b8b8bServer    &#ffffff {server}"
+  info-proxy:    "  &#8b8b8bProxy     &#ffffff {proxy}"
+  info-luckperms: " &#8b8b8bLuckPerms &#ffffff {lp}"
+  info-channels: "  &#8b8b8bChannels  &#ffffff {channels}"
+  info-footer:   "&#00b4ff ═══════════════════════"
+
+  debug-header:    "&#ffaa00 ─── ChatOS Debug ───"
+  debug-toggles:   "  &#8b8b8bToggles:  &#ffffff{count} active"
+  debug-spies:     "  &#8b8b8bSpies:    &#ffffff{count} active"
+  debug-mutes:     "  &#8b8b8bMutes:    &#ffffff{count} active"
+  debug-staffmode: "  &#8b8b8bStaffMode: &#ffffff{count} active"
