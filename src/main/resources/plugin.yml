@@ -1,6 +1,6 @@
 name: ChatOS
 version: '${version}'
-main: dev.bowlos.chatos.ChatOS
+main: dev.bowlos.ChatOS
 description: '${description}'
 authors: [ BowlOS ]
 website: https://github.com/BowlOS
