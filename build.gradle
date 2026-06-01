@@ -3,8 +3,8 @@ plugins {
 }
 
 group = 'dev.bowlos'
-version = '1.0.0'
-description = 'ChatOS - Professional Staff Chat Plugin by BowlOS'
+version = '1.1.0'
+description = 'ChatOS - Clean Comissioned Chat Plugin'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
